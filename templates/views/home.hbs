@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aniket Hirpara</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Quicksand:wght@300;400;500;600;700&family=Inconsolata:wght@300;400;500;600;700&display=swap');
+        /* font-family: 'IBM Plex Sans',
+        sans-serif;
+        font-family: 'Quicksand',
+        sans-serif; */
+
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0.3rem;
+        }
+
+        .intro {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            /* font-family: 'IBM Plex Sans', sans-serif;*/
+        }
+
+      /*IMAGE SIZE*/
+        #profileImg {
+            height: 200px;
+            width: 200px;
+        }
+
+        .just-wrapper {
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            align-items: flex-start;
+        }
+
+        .small-txt {
+            font-size: 25px;
+            justify-content: end;
+            font-weight: normal;
+        }
+
+        .name {
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .occup {
+            font-size: 35px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: white;
+            width: 100%;
+            bottom: 45%;
+
+        }
+
+        /* MOBILE TYPEWRITING ANIMATION */
+        #occupTypes {
+            background-color: #131313;
+            padding: 5px;
+            flex-wrap: nowrap;
+            font-family: 'Inconsolata', monospace;
+            font-weight: lighter;
+            visibility: hidden;
+            display: none;
+        }
+        /* END MOBILE TYPEWRITING ANIMATION */
+
+        /* FLIP Animation FOR LARGE DEVICES */
+        #flip {
+            height: 50px;
+            overflow: hidden;
+            background: #42c58a;
+        }
+
+        #flip>div>div {
+            color: #fff;
+            padding: 4px 12px;
+            height: 45px;
+            margin-bottom: 45px;
+            display: inline-block;
+
+        }
+
+        #flip div:first-child {
+            animation: show 5s linear infinite;
+        }
+
+        @keyframes show {
+            0% {
+                margin-top: -270px;
+            }
+
+            5% {
+                margin-top: -180px;
+            }
+
+            33% {
+                margin-top: -180px;
+            }
+
+            38% {
+                margin-top: -90px;
+            }
+
+            66% {
+                margin-top: -90px;
+            }
+
+            71% {
+                margin-top: 0px;
+            }
+
+            99.99% {
+                margin-top: 0px;
+            }
+
+            100% {
+                margin-top: -270px;
+            }
+        }
+        /* END ANIMATION */
+
+        .bracketsAnimation{
+           position: relative;
+        }
+
+        /* RESPONSIVE CODE */
+        @media only screen and (max-width: 600px) {
+
+
+            .name,
+            .occup,
+            .intro {
+                flex-direction: column;
+            }
+
+        }
+
+          @media only screen and (max-width: 900px) {
+            .name {
+                font-size: 40px;
+            }
+
+            .occup {
+                font-size: 27px;
+            }
+
+            .small-txt {
+                font-size: 18px;
+            }
+
+            #occupTypes {
+                visibility: visible;
+                display: flex;
+                margin-top: 4px;
+            }
+
+            #flip {
+                display: none;
+                visibility: hidden;
+            }
+
+            img {
+                align-self: center;
+            }
+        }
+
+        /* END RESPONSIVE CODE */
+    </style>
+</head>
+
+<body>
+
+    <div class="intro">
+        <img id="profileImg" src="https://i.imgur.com/DdNWaOT.png">
+        <div class="just-wrapper">
+            <div>
+                <h4 class="name"><span class="small-txt">I'm&nbsp;</span><span>Aniket Hirpara</span></h4>
+            </div>
+            <div class="occup"><small class="small-txt">a self-taught&nbsp;</small>
+                <span id="occupTypes"></span>
+            
+                <div id="flip">
+                    <div>
+                        <div>FULL STACK DEVELOPER</div>
+                    </div>
+                    <div>
+                        <div>FLUTTER DEVELOPER</div>
+                    </div>
+                    <div>
+                        <div>VIDEO EDITOR</div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <hr style="width: 100%; background-color: #9854cb; height: 1px; border: 0px">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    <script>
+
+        const occp1 = new TypeIt("#occupTypes", {
+            startDelay: 300,
+            loop: true
+        }).type("Full Stack Developer".toString().toUpperCase(), { delay: 900 })
+            .delete(20, { delay: 700 })
+            .type("Flutter Developer".toString().toUpperCase(), { delay: 800 })
+            .delete(17, { delay: 600 })
+            .type("Video Editor".toString().toUpperCase(), { delay: 650 })
+            .delete(12, { delay: 450 }).go()
+
+
+    </script>
+</body>
+
+</html>
